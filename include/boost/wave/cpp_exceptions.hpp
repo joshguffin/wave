@@ -155,7 +155,8 @@ public:
         code(code)
     {
         unsigned int off = 0;
-        while (off < sizeof(buffer) && *what_)
+        const unsigned int max = sizeof(buffer) - 1;
+        while (off < max && *what_)
             buffer[off++] = *what_++;
         buffer[off] = 0;
     }
